@@ -2,7 +2,7 @@
 void main()
 {
 int ALL[5][5],M[5][5],N[5][5];
-int AV[3],S[5],i,j,k,n=5,m=3,x=0,count=0,countp=0;
+int AV[3],S[5],i,j,k,n=5,m=3,x=0,count=0,countp=0,seq[5];
 printf("Enter Allocated:\n");
 for(i=0;i<n;i++)
  {
@@ -57,12 +57,15 @@ for(i=0;i<n;i++)
   }
   if(count==m)
    {
+       
         for(k=0;k<m;k++)
          {
           AV[k]=(AV[k]+ALL[i][k]);
          }
     S[i]=1;
+    
    countp++;
+   seq[i]=countp;
   }
 }
 }
@@ -80,5 +83,8 @@ for(i=0;i<m;i++)
 {
 printf("%d ",AV[i]);
 }
-
+for(i=0;i<n;i++)
+{
+    printf("\n%d ",seq[i]);
+}
 }
